@@ -1,11 +1,11 @@
-{% extends 'base.html.j2' %}
+{% extends 'base.html' %}
 
 
 {% block obsah %}
 
 <h1>ABC</h1>
 
-    <h1>Flask <a href="{{ url_for('index') }}">pokus</a></h1>
+    <h2>Flask <a href="{{ url_for('index') }}">pokus</a></h2>
     <ul>
         {% for s in slova  %}
             <li>Je to {{s}}.</li>
