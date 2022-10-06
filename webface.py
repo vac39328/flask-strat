@@ -36,9 +36,18 @@ def info():
 def abc():
     return render_template("abc.html", slova=slova)
 
-@app.route("/varna/")
+@app.route("/varna/", methods=["GET", "POST"])
 def varna():
-    return render_template("varna.html")
+    hmotnost = request.args.get("hmotnost")
+    výška = request.args.get("výška")
+
+    print(hmotnost, výška)
+    if hmotnost and výška != None:
+        bmi = int(hmotnost)//((int(výška)/100)**2)
+    else:
+        bmi=0
+
+    return render_template("varna.html", bmi=bmi)
 
 
 @app.route("/text/")

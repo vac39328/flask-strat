@@ -1,11 +1,42 @@
 {% extends 'base.html' %}
 
-{%block title%}Varna{%endblock%}
+{%block title%}BMI{%endblock%}
 
 {% block obsah %}
 
-<h1>Varna</h1>
+<h1>BMI</h1>
+<h2>Vypočti si své BMI</h2>
 
-<p>Varna je v Olomouci</p>
+<p>Obezita je definovaná jako stav, kdy se u člověka nahromadilo tolik tělesného tuku, že může mít negativní vliv na jeho zdravotní stav. O obezitě mluvíme, když tělesná hmotnost přesahuje normu o 20 % a víc. <br> 
+    Podle statistik z roku 2014 je obézních víc než 16 % Čechů, přičemž problém s váhou se o něco častěji objevuje u žen než u mužů.Zaužívaným měřidlem rizika obezity je Index tělesné hmotnosti označovaný jako BMI (z angl. Body Maxx Index). <br>
+    Jde o screeningový nástroj, kterým se odhaduje množství tělesného tuku a s ním spojená zdravotní rizika pomocí poměru tělesné hmotnosti a výšky. BMI je velmi jednoduché měřidlo, pomocí něhož si každý z nás dokáže určit ohrožení obezitou, ale i podvýživou. <br>
+    O tom, jak se tento index používá, jaké jsou jeho přednosti, ale i limity, si povíme víc v následujícím článku. <br>
+</p>
+<h2>Kalkulačka na výpočet svého BMI</h2>
+<form action="" method="GET">
+    <p>Hmotnost: <br><input type= "number" name="hmotnost" placeholder="hmotnost v kg">kg </p>
+    <p>Výška: <br><input type="number" name ="výška" placeholder="výška v cm">cm </p>
+    <input type="submit" value="Vypočítej mi to!">
+</form>
+<p>BMI={{bmi}}</p>
+
+<h3>Podváha (BMI<18,5)</h3>
+<p>Podváha je znakem nedostatečné výživy, s níž jsou, podobně jako s obezitou, spojena jistá zdravotní rizika a komplikace. Závažná podváha se v našich poměrech zpravidla vyskytuje u osob s poruchami příjmu potravy (mentální anorexie a bulimie).</p>
+<p>Při podváze chybí organismu základní minerály, vitamíny a stopové prvky. Oslabený bývá imunitní systém a v závažných stavech začínají selhávat i další funkce. Dochází k atrofii svalstva a k úbytku kostní hmoty.</p>
+
+<h3>Ideální váha (BMI 18,5–24,9)</h3>
+<p>Udržení zdravé hmotnosti má své nesporné výhody. Váže se s nízkým rizikem srdečně-cévních onemocnění a nižším zatížením kloubů a svalů. Lidé s normální hmotností mají zpravidla víc energie, bývají aktivnější, lépe spí a méně se u nich projevuje únava.</p>
+<p>Výzkumy ukazují kromě nižšího rizika cukrovky 2. typu i snížené riziko výskytu některých druhů rakoviny.</p>
+
+<h3>Nadváha (BMI 25–29,9)</h3>
+<p>Mírná nadváha se váže jen s lehce zvýšeným zdravotním rizikem, které nemusí být pravidlem. Nejčastěji se hovoří o zvýšení krevního tlaku, s čímž se přirozeně pojí vyšší ohrožení srdečně-cevními onemocněními. Nadváha u aktivních a pravidelně sportujících lidí však nemusí předznamenávat žádné zdravotní komplikace.</p>
+<p>Lidé s nadváhou se dokonce považují za méně ohrožené zdravotními komplikacemi než lidé s podváhou. Předpokládá se u nich totiž dostatečný příjem živin. Lidem s nadváhou se zpravidla nedoporučují redukční diety a stravovací omezení. Vhodnější je přiměřená fyzická aktivita.</p>
+
+<h3>Obezita (BMI 30 a víc)</h3>
+<p>O obezitě hovoříme, když BMI přesáhne 30. Se stoupajícím indexem tělesné hmotnosti tady už přímo úměrně stoupají i zdravotní rizika. Vysoký podíl tělesného tuku v těle zatěžuje především srdce a cévy. Stoupá riziko ucpání cév, náhlé mozkové příhody či infarktu. Obezita tak přímo ohrožuje život člověka.</p>
+<p>U obézních se prokazatelně častěji vyskytuje diabetes 2. typu, ale i některé typy nádorových onemocnění. Byl prokázán vztah mezi obezitou a rakovinou tlustého střeva, prsu, ledvin i děložního čípku. Vysoká hmotnost samozřejmě zatěžuje klouby a u obézních se častěji vyvíjí bolestivá artróza a omezení pohyblivosti.</p>
+
+
+
 
 {% endblock obsah %}
