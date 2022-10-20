@@ -14,11 +14,31 @@
 </p>
 <h2>Kalkulačka na výpočet svého BMI</h2>
 <form action="" method="GET">
-    <p>Hmotnost: <br><input type= "number" name="hmotnost" placeholder="hmotnost v kg">kg </p>
-    <p>Výška: <br><input type="number" name ="výška" placeholder="výška v cm">cm </p>
+    <p>Hmotnost: <br><input type= "number" name="hmotnost" placeholder="hmotnost v kg" value="{{request.args.get('hmotnost') }}">kg </p>
+    <p>Výška: <br><input type="number" name ="výška" placeholder="výška v cm" value="{{request.args.get('výška')}}">cm </p>
     <input type="submit" value="Vypočítej mi to!">
 </form>
-<p>BMI={{bmi}}</p>
+
+{% if bmi != None %}
+<p> Vaše BMI = {{bmi}}</p>
+    {% if bmi <18.5 %}
+    <p>Vaše BMI je v hranici podváhy</p>
+    {% elif bmi  < 25%}
+    <p>Vaše BMI je v hranici normální váhy</p>
+    {% elif bmi  < 30%}
+    <p>Vaše BMI je v hranici nadváhy</p>
+    {% elif bmi  < 35%}
+    <p>Vaše BMI je v hranici lehké obezity</p>
+    {% elif bmi  < 40%}
+    <p>Vaše BMI je v hranici střední obezity</p>
+    {% elif bmi  >= 40%}
+    <p>Vaše BMI je v hranici morbitní obezity</p>
+    {%endif%}
+{% else %}
+    <p style="color:red">Zadejte spávné hodnoty</p>
+{% endif %}
+
+
 
 <h3>Podváha (BMI<18,5)</h3>
 <p>Podváha je znakem nedostatečné výživy, s níž jsou, podobně jako s obezitou, spojena jistá zdravotní rizika a komplikace. Závažná podváha se v našich poměrech zpravidla vyskytuje u osob s poruchami příjmu potravy (mentální anorexie a bulimie).</p>

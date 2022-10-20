@@ -42,10 +42,14 @@ def varna():
     výška = request.args.get("výška")
 
     print(hmotnost, výška)
-    if hmotnost and výška != None:
-        bmi = int(hmotnost)//((int(výška)/100)**2)
+    if hmotnost and výška:
+        try:
+            bmi = int(hmotnost)//((int(výška)/100)**2)
+        except (ZeroDivisionError, ValueError):
+            bmi = None
+            #err= "Je třeba zadat správné hodnoty!"
     else:
-        bmi=0
+        bmi = None
 
     return render_template("varna.html", bmi=bmi)
 
